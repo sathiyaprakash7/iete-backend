@@ -9,10 +9,10 @@ app.use(express.json());
 app.use(cors());
 
 var con = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database:"react_test"
+    host:"sql12.freemysqlhosting.net",
+    user:"sql12646903",
+    password:"XI86Y3WbLa",
+    database:"sql12646903"
 });
 
 con.connect();
@@ -42,7 +42,7 @@ app.post("/add", (req, res)=>{
     const name = req.body.name;
     const email = req.body.email;
     const message = req.body.message;
-    con.query("insert into comment (name,email,message) values (?,?,?)",
+    con.query("insert into contact (name,email,message) values (?,?,?)",
     [name,email,message],
     (err,data)=>{
         if(err){console.error(err);}
